@@ -4,10 +4,10 @@
 
 Este es el repositorio del *Grupo 1*, cuyos integrantes son:
 
-* Eduardo Gómez García - INSERTE ROL
-* Ignacio Muñoz Martínez - INSERTE ROL
+* Eduardo Gómez García - 201910524-8
+* Ignacio Muñoz Martínez - 202030543-9
 * Gabriel Zapata  - 202041528-5
-* Thomas Soto Fuica - INSERTE ROL
+* Thomas Soto Fuica - 201930528-k
 * **Tutora**: Giuliana Zanetti
 
 ## Wiki del proyecto Identificado
