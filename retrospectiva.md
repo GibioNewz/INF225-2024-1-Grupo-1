@@ -17,3 +17,12 @@
 **Probabilidad de ocurrencia:** Alto.  
 **Medida de mitigación:** Debemos tener una herramienta que detecte la caída del servicio de e-mail.  
 **Estado del riesgo:** Activo y no mitigado.
+
+## Riesgo 3
+
+**Riesgo identificado:** Caída de la página web debido a múltiples instancias.
+**Objetivo afectado:** Funcionalidad del sistema.
+**Impacto:** Alto.
+**Probabilidad de ocurrencia:** Bajo.
+**Medida de mitigación:** Debemos manejar la caducidad de sessiones y el máximo de usuarios en simultáneo.
+**Estado del riesgo:** Activo y no mitigado.
