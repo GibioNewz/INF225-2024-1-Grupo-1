@@ -13,7 +13,7 @@ Este es el repositorio del *Grupo 1*, cuyos integrantes son:
 ## Wiki del proyecto Identificado
 
 
-Puede acceder a la Wiki  del proyecto seleccionado del paralelo 200 mediante el siguiente [enlace](https://gitlab.inf.utfsm.cl/christian.ossa/inf236-2023-2-grupo-18/-/wikis/%E2%9D%80Home%E2%9D%80).
+Puede acceder a la Wiki  del proyecto seleccionado del paralelo 200 mediante el siguiente [enlace](https://github.com/GibioNewz/INF225-2024-1-Grupo-1/wiki).
 
 ## Descripción
 
