@@ -24,5 +24,5 @@
 **Objetivo afectado:** Funcionalidad del sistema.
 **Impacto:** Alto.
 **Probabilidad de ocurrencia:** Bajo.
-**Medida de mitigación:** Debemos manejar la caducidad de sessiones y el máximo de usuarios en simultáneo.
+**Medida de mitigación:** Debemos manejar la caducidad de sesiones y el máximo de usuarios en simultáneo.
 **Estado del riesgo:** Activo y no mitigado.
