@@ -30,9 +30,8 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       type: DataTypes.STRING
     },
-    esVendedor: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
+    tipoUsuario: {
+      type: DataTypes.INTEGER
     },
     password: {
       allowNull: false,

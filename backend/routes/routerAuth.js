@@ -44,7 +44,7 @@ router.post("/register", async (req, res) => {
             password: hashPass,
             rut: req.body.rut,
             nombre: req.body.nombre,
-            esVendedor: req.body.esVendedor
+            tipoUsuario: req.body.tipoUsuario
 
         })
         return res.json({ message: "Registro exitoso" });

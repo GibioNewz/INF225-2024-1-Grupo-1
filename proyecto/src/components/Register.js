@@ -8,14 +8,14 @@ function Register(props) {
   const [password, setPassword] = useState("");
   const [rut, setRut] = useState("");
   const [nombre, setNombre] = useState("");
-  const [esVendedor, setEsVendedor] = useState(false);
+  const [tipoUsuario, setTipoUsuario] = useState(0);
   const [estado, setEstado] = useState("");
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleRut = (e) => setRut(e.target.value);
   const handleNombre = (e) => setNombre(e.target.value);
-  const handleEsVendedor = (e) => setEsVendedor(e.target.checked);
+  const handleTipoUsuario = (e) => setTipoUsuario(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ function Register(props) {
         email: email,
         password: password,
         rut: rut, // Aquí debes unir el número de RUT y el dígito verificador antes de enviarlo al servidor
-        esVendedor: esVendedor,
+        tipoUsuario: tipoUsuario,
         nombre: nombre,
       })
       .then((response) => {
@@ -78,12 +78,14 @@ function Register(props) {
       </Form.Group>
 
       <Form.Group controlId="formEsVendedor">
-        <Form.Check
-          type="switch"
-          label="Es vendedor?"
-          checked={esVendedor}
-          onChange={handleEsVendedor}
-        />
+        Seleccione su rol
+        <Form.Select onChange={handleTipoUsuario} aria-label="Seleccione Rol">
+          <option value="0">Cliente</option>
+          <option value="1">Vendedor</option>
+          <option value="2">Analista</option>
+        </Form.Select>
+        {tipoUsuario}
+
       </Form.Group>
 
       <Button onClick={handleSubmit} variant="primary" type="submit">

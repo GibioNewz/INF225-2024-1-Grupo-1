@@ -17,9 +17,8 @@ module.exports = {
         unique: true,
         type: Sequelize.STRING
       },
-      esVendedor: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
+      tipoUsuario: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

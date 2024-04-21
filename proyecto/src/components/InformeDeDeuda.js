@@ -20,7 +20,7 @@ function showDecimal(number){
   return result;
 }
 
-function Prestamos() {
+function InformeDeDeuda() {
     const [ListofPrestamos, setListofPrestamos] = useState([]);
     const isLogged = useSelector((store) => store.authReducer.isLogged);
     
@@ -33,9 +33,7 @@ function Prestamos() {
                 },
             }).then((response) => {
                 console.log(response.data);
-                console.log(JSON.parse(user).rut);
-                const myData = response.data.filter((prestamo) => prestamo.createdBy === JSON.parse(user).rut);
-                setListofPrestamos(myData);
+                setListofPrestamos(response.data);
             });
         } catch (error) {
             console.error("Error fetching prestamos:", error);
@@ -62,6 +60,7 @@ function Prestamos() {
                     <th className="kawaii-cell">Cuota UF</th>
                     <th className="kawaii-cell">Total</th>
                     <th className="kawaii-cell">Fecha de solicitud</th>
+                    <th className="kawaii-cell">Creado por</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,6 +74,7 @@ function Prestamos() {
                       <td className="kawaii-cell">{showDecimal(value.cuota_uf)}</td>
                       <td className="kawaii-cell">{showDecimal(value.total)}</td>
                       <td className="kawaii-cell">{formatDate(value.createdAt)}</td>
+                      <td className="kawaii-cell">{value.createdBy}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -89,4 +89,4 @@ function Prestamos() {
       );      
 }
 
-export default Prestamos;
+export default InformeDeDeuda;

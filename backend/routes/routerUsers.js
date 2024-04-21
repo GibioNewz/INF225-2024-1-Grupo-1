@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     try {
         const allUsers = await Usuario.findAll({
             where: {
-                esVendedor: false
+                tipoUsuario: 0
             }
         });; //retorna users en .json
         res.send(allUsers);

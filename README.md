@@ -18,3 +18,38 @@ Puede acceder a la Wiki  del proyecto seleccionado del paralelo 200 mediante el 
 ## Descripción
 
 El proyecto base corresponde a un sistema de automatización para el analista de ventas de un banco. Este es una aplicción web que asiste al usuario en su procesamiento de solicitudes de préstamos en UF.
+
+
+## Como correr el proyecto
+
+-Instalar postgres.
+-Ir a la carpeta de backend
+-Ejecutar npm install
+-Ejecutar los siguientes comandos o importar la base de datos adjunta
+-npx sequelize db:create 
+-npx sequelize-cli db:migrate
+-npm run start
+-Luego, ir a la carpeta proyecto
+-Ejecutar npm install
+-Ejecutar npm run start
+-Loggearse y probar.
+
+# Ojo
+Si importaste la base de datos, no tendrás que registrar nuevos usuarios, pero si usaste los comandos para crear la base de datos y generar las migraciones, deberás crear usuarios con sus respectivos roles. Por ende se recomienda importar la db.
+
+# Credenciales
+### Analista
+user : analista@usm.cl
+pass: 220053
+
+### Vendedor
+Vendedor1 
+user: vendedor1@usm.cl
+pass: 220053
+Vendedor2
+user : vendedor2@usm.cl
+pass: 220053
+
+### Cliente
+user: cliente1@usm.cl
+pass: 220053

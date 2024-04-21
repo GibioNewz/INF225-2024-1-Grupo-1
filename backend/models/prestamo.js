@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     cuota_uf: DataTypes.DECIMAL,
     total: DataTypes.DECIMAL,
     valor_credito: DataTypes.DECIMAL,
-    rut_cliente: DataTypes.INTEGER
+    rut_cliente: DataTypes.INTEGER,
+    createdBy: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'prestamo',

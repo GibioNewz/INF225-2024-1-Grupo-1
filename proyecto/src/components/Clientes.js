@@ -11,11 +11,10 @@ function Clientes() {
     const [ListofClients, setListofClients] = useState([]);
     const [filteredClients, setFilteredClients] = useState([]);
     const isLogged = useSelector((store) => store.authReducer.isLogged);
-    let esVendedor = false; // Inicializa esVendedor como false por defecto
-
+    let tipoUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).tipoUsuario : 0; // Inicializa esVendedor como false por defecto
     if (isLogged) {
     // Solo intenta obtener esVendedor si el usuario está autenticado
-    esVendedor = JSON.parse(localStorage.getItem('user')).esVendedor;
+    tipoUsuario = JSON.parse(localStorage.getItem('user')).tipoUsuario;
     }
 
     useEffect(() => {
@@ -43,7 +42,7 @@ function Clientes() {
     };
 
     return isLogged ? (
-        esVendedor ? (
+        tipoUsuario == 1 ? (
         <div className="App">
             <div className="background-pink"> {/* Aplicamos el fondo rosa pastel aquí */}
             <SearchBar onSearch={handleSearch} onClear={handleClear} />

@@ -31,6 +31,7 @@ function Solicitudes(props) {
   const handleValorCred = (e) => setvalor_credito(e.target.value);
   const handleRut = (e) => setRut(e.target.value);
   const handlePlazo = (e) => setPlazo(e.target.value);
+  console.log(JSON.parse(localStorage.getItem('user')).rut);
   
 
   const handleSubmit = (e) => {
@@ -42,6 +43,7 @@ function Solicitudes(props) {
         valor_credito:valor_credito,
         plazo:plazo,
         rut_cliente:rut,
+        createdBy:JSON.parse(localStorage.getItem('user')).rut,
       })
       .then((response) => {
         setEstado("OK");
@@ -80,6 +82,7 @@ function Solicitudes(props) {
           <p>Cuota UF: {showDecimal(prestamo.cuota_uf)}</p>
           <p>Total: {showDecimal(prestamo.total)}</p>
           <p>Fecha de solicitud: {formatDate(prestamo.createdAt)}</p>
+          <p>Creado por: {prestamo.createdBy}</p>
         </Alert>) : (
           <Alert variant="danger">
           {estado}

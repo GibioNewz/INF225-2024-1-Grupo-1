@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Solicitudes from './components/Solicitudes';
 import Prestamos from './components/Prestamos';
+import InformeDeDeuda from './components/InformeDeDeuda';
 import { logout} from "./redux/actions/authActions"
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Nav, NavDropdown, Navbar, Form, InputGroup} from "react-bootstrap"
@@ -19,6 +20,7 @@ const App = () => {
       setCurrentPage(getInitialPage());
     };
   }, []);
+  let tipoUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).tipoUsuario : 0;
 
   function getInitialPage() {
     const path = window.location.pathname;
@@ -57,6 +59,8 @@ const App = () => {
         return <Solicitudes />;
       case 'prestamos':
         return <Prestamos />;
+      case 'informeDeDeuda':
+        return <InformeDeDeuda />;
       default:
         return null;
     }
@@ -71,14 +75,17 @@ const App = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link onClick={() => handleLinkClick('inicio')}>Inicio</Nav.Link>
-              {isLogged && <Nav.Link onClick={() => handleLinkClick('clientes')}>Clientes</Nav.Link>}
-              {isLogged && <Nav.Link onClick={() => handleLinkClick('prestamos')}>Ver Solicitudes</Nav.Link>}
-              <Nav.Link onClick={() => handleLinkClick('valoruf')}>Valor UF</Nav.Link>
+              {isLogged && tipoUsuario==1 &&<Nav.Link onClick={() => handleLinkClick('clientes')}>Clientes</Nav.Link>}
+              {isLogged && tipoUsuario==1 &&<Nav.Link onClick={() => handleLinkClick('prestamos')}>Ver Solicitudes</Nav.Link>}
+              {isLogged && tipoUsuario==2 &&<Nav.Link onClick={() => handleLinkClick('informeDeDeuda')}>Informe de deudas</Nav.Link>}
+              
+              <Nav.Link onClick={() => handleLinkClick('valoruf')}>Valores divisas</Nav.Link>
             </Nav>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Opciones" id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={() => handleLinkClick('login')}>Login</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => handleLinkClick('register')}>Register</NavDropdown.Item>
-                {isLogged && <NavDropdown.Item onClick={() => handleLinkClick('solicitudes')}>Generar Solicitudes</NavDropdown.Item>}
+                {isLogged && tipoUsuario==1 &&
+                 <NavDropdown.Item onClick={() => handleLinkClick('solicitudes')}>Generar Solicitudes</NavDropdown.Item>}
                 <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Navbar.Collapse>

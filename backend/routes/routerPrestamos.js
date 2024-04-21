@@ -33,10 +33,10 @@ router.get("/test", async (req, res) => {
 
 router.get("/ver", async (req, res) => {
     const user=JSON.parse(req.query.user);
-    const esVendedor=user.esVendedor;
+    const tipoUsuario=user.tipoUsuario;
     const rut=user.rut;
     try {
-        if (esVendedor) {
+        if (tipoUsuario==1 || tipoUsuario==2) {
             // Si es un vendedor, recupera todos los préstamos
             const allPrestamos = await prestamo.findAll({
                 attributes: [
@@ -50,6 +50,7 @@ router.get("/ver", async (req, res) => {
                     "rut_cliente",
                     "createdAt",
                     "updatedAt",
+                    "createdBy"
                 ],
             });
             res.send(allPrestamos);
@@ -118,6 +119,7 @@ router.post("/generar", async (req, res) => {
             total:total, // Calculado previamente
             valor_credito:valor_credito,
             rut_cliente:req.body.rut_cliente,
+            createdBy:parseInt(req.body.createdBy),
         }
         console.log(params);
         const createPrestamo = await prestamo.create(params,{

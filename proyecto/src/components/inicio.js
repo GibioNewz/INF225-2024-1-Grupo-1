@@ -2,7 +2,7 @@ import React from 'react';
 import './Inicio.css'; 
 
 function Inicio() {const user=JSON.parse(localStorage.getItem('user'));
-console.log(user);
+console.log("tipoUsuario:",user.tipoUsuario);
   return (
     <div className="inicio-banco">
       <div className="inicio-banco-buttons">

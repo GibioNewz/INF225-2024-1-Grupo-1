@@ -17,7 +17,7 @@ const routerPrestamos = require("./routes/routerPrestamos");
 
 // middleware
 const PORT = process.env.PORT || 3000;
-const backendUrl = process.env.BACKEND_URL || 'http://localhost:3000';
+//const backendUrl = process.env.BACKEND_URL || 'http://localhost:3000';
 app.use(express.json());
 app.use("/back", routerBack);
 app.use("/Users", routerUsers);
@@ -37,5 +37,6 @@ app.get("/api", (req, res) => {
 
 app.listen(PORT, ()=>{
     console.log("Server activo");
+    console.log(`Server running on port ${PORT}`);
 });
 
