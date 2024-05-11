@@ -33,19 +33,19 @@ class TestRegistro(unittest.TestCase):
     def test_registro_exitoso(self):
         response = requests.post(self.register_url, json= self.datos_de_registro_exitoso)
 
-        # Verificar que la solicitud se haya realizado con éxito (código de estado 200)
+        # Verifica que la solicitud se haya realizado con éxito (código de estado 200)
         self.assertEqual(response.status_code, 200)
 
-        # Verificar el mensaje de éxito en la respuesta JSON
+        # Verifica que el mensaje sea correspondiente a la respuesta
         self.assertEqual(response.json()["mensaje"], "Usuario registrado exitosamente")
     def test_registro_fallido(self):
-        # Realizar la solicitud de registro
+        # Realiza la solicitud de registro inválida
         response = requests.post(self.register_url, json=self.datos_de_registro_invalido)
 
-        # Verificar que la solicitud haya fallado (código de estado 400)
+        # Verifica que la solicitud haya fallado (código de estado 400)
         self.assertEqual(response.status_code, 400)
 
-        # Verificar el mensaje de error en la respuesta JSON
+        # Verifica que el mensaje de error en la respuesta JSON
         self.assertEqual(response.json()["error"], "Email ya existe")
 
 
@@ -72,22 +72,22 @@ class TestLogin(unittest.TestCase):
         del cls.datos_de_login_exitoso
         del cls.datos_de_login_invalido
     def test_login_exitoso(self):
-        # Realizar la solicitud de inicio de sesión
+        # Realiza la solicitud de inicio de sesión
         response = requests.post(self.login_url, json=self.datos_de_login_exitoso)
 
-        # Verificar que la solicitud se haya realizado con éxito (código de estado 200)
+        # Verifica que la solicitud se haya realizado con éxito (código de estado 200)
         self.assertEqual(response.status_code, 200)
 
-        # Verificar el mensaje de éxito en la respuesta JSON
+        # Verifica que el mensaje sea correspondiente a un exito
         self.assertEqual(response.json()["message"], "Login exitoso")
     def test_login_fallido(self):
-        # Realizar la solicitud de inicio de sesión
+        # Realiza la solicitud de inicio de sesión inválida
         response = requests.post(self.login_url, json= self.datos_de_login_invalido)
 
-        # Verificar que la solicitud haya fallado (código de estado 400)
+        # Verifica que la solicitud haya fallado (código de estado 400)
         self.assertEqual(response.status_code, 400)
 
-        # Verificar el mensaje de error en la respuesta JSON
+        # Verifica que el mensaje de error sea correspondiente al error
         self.assertEqual(response.json()["error"], "Email incorrecto")
 
 if __name__ == '__main__':
