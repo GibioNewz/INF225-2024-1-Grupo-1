@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import './Clientes.css';
 import {useSelector} from "react-redux";
 import { Alert } from "react-bootstrap";
+import { Button } from "react-bootstrap/lib/InputGroup";
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function formatDate(dateString) {
@@ -80,6 +81,7 @@ function InformeDeDeuda() {
                 </tbody>
               </Table>
             )}
+            <Button onClick={() => {}}>Generar informe</Button>
           </div>
         </div>
       ) : (
