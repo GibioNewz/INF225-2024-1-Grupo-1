@@ -3,8 +3,7 @@ import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import './Clientes.css';
 import {useSelector} from "react-redux";
-import { Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap/lib/InputGroup";
+import { Alert , Button } from "react-bootstrap";
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function formatDate(dateString) {
