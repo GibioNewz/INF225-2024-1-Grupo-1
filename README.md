@@ -17,8 +17,6 @@ Puede acceder a la Wiki  del proyecto seleccionado del paralelo 200 mediante el 
 
 ## Descripción
 
-El proyecto base corresponde a un sistema de automatización para el analista de ventas de un banco. Este es una aplicción web que asiste al usuario en su procesamiento de solicitudes de préstamos en UF.
-
 El proyecto base corresponde a un sistema de automatización para el analista de ventas de un banco. Este es una aplicación web que asiste al usuario en su procesamiento de solicitudes de préstamos en UF.
 
 
