@@ -10,6 +10,10 @@ Este es el repositorio del *Grupo 1*, cuyos integrantes son:
 * Thomas Soto Fuica - 201930528-k
 * **Tutora**: Giuliana Zanetti
 
+## Hito 4
+
+Video entrega Hito 4: https://youtu.be/CvmHA9xdwdA
+
 ## Wiki del proyecto Identificado
 
 
