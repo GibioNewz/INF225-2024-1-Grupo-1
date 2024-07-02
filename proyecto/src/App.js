@@ -78,6 +78,7 @@ const App = () => {
               {isLogged && tipoUsuario==1 &&<Nav.Link onClick={() => handleLinkClick('clientes')}>Clientes</Nav.Link>}
               {isLogged && tipoUsuario==1 &&<Nav.Link onClick={() => handleLinkClick('prestamos')}>Ver Solicitudes</Nav.Link>}
               {isLogged && tipoUsuario==2 &&<Nav.Link onClick={() => handleLinkClick('informeDeDeuda')}>Informe de deudas</Nav.Link>}
+              {isLogged && tipoUsuario==2 &&<Nav.Link onClick={() => alert('Aun no puedes generar informes')}>Generar informe</Nav.Link>}
               
               <Nav.Link onClick={() => handleLinkClick('valoruf')}>Valores divisas</Nav.Link>
             </Nav>

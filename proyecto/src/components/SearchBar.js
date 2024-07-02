@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({ onSearch, onClear }) => {
     const [query, setQuery] = useState('');
@@ -31,5 +32,8 @@ const SearchBar = ({ onSearch, onClear }) => {
       </Form>
     );
   };
-  
+  SearchBar.propTypes = {
+    onSearch: PropTypes.func.isRequired,
+    onClear: PropTypes.func.isRequired,
+  };
   export default SearchBar;
